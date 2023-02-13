@@ -5,7 +5,7 @@ def combinaison(liste):
     for a in liste:
         for b in liste:
             for c in liste:
-                if a < b <c:
+                if a < b < c:
                     abc = f"{a}{b}{c}"
                     combinaisons.append(abc)
     return combinaisons
