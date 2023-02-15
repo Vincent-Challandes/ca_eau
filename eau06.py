@@ -5,6 +5,7 @@ import sys
 liste_maj = "ABCDEFGHIJKLMNOPQRSTUVWXYZ! "
 liste_min = "abcdefghijklmnopqrstuvwxyz! "
 
+# ma propre fonction lower()
 # Convertie une string en minuscule (pourrait avoir en entrée des min et des MAJ, chiffre symbole etc)
 def minuscule(lettre):
     result = ""
@@ -17,6 +18,7 @@ def minuscule(lettre):
             result += lettre[c]
     return result
 
+# ma propre fonction upper()
 # Convertie une string en MAJUSUCULE (pourrait avoir en entrée des min et des MAJ, chiffre symbole etc)
 def majuscule(lettre):
     result = ""
