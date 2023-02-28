@@ -1,5 +1,11 @@
 ## Functions
 
+def creer_liste_chiffre(chiffre_max):
+    liste = []
+    for i in range(chiffre_max + 1):
+        liste.append(i)
+    return liste
+
 def creer_liste_nombre(liste):
     liste_nb = []
     for a in liste:
@@ -26,7 +32,7 @@ def affichage(liste):
 
 ## Parsing
 
-liste_chiffre = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+liste_chiffre = creer_liste_chiffre(9)
 
 liste_nombre = creer_liste_nombre(liste_chiffre)
 
