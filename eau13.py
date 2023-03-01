@@ -2,6 +2,11 @@
 
 import sys
 
+def check_nb_args(args):
+    if len(args) < 3:
+        print("error !")
+        sys.exit()
+
 def chiffre_only(liste):
     for c in liste:
         if not c.lstrip("-").isdigit():
@@ -34,9 +39,7 @@ def affichage(array):
 
 ## Error handling
 
-if len(sys.argv) < 3:
-    print("error !")
-    sys.exit()
+check_nb_args(sys.argv)
 
 chiffre_only(sys.argv[1:])
 
