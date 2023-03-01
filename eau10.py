@@ -2,6 +2,11 @@
 
 import sys
 
+def error_handling(args):
+    if len(args) <= 2:
+        print("error!")
+        sys.exit()
+
 def index_wanted(array, element):
     for i in range(len(array)):
         if element == array[i]:
@@ -11,9 +16,7 @@ def index_wanted(array, element):
 
 ## Error handling
 
-if len(sys.argv) <= 2:
-    print("error!")
-    sys.exit()
+error_handling(sys.argv)
 
 
 ## Parsing
