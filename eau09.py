@@ -2,24 +2,35 @@
 
 import sys
 
+def error_handling(args):
+    # check nb arguments
+    if len(args) != 3:
+        print("error !")
+        sys.exit()
+
+    # check format argument
+    if not args[1].isdigit() or not args[2].isdigit():
+        print("error format!")
+        sys.exit()
+
 # fonction pour définir min max
-def which_min_max(a, b):
-    if a == b:
+def which_min_max(nb1, nb2):
+    if nb1 == nb2:
         print("error min = max!")
         sys.exit()
-    elif a < b:
-        min = a
-        max = b
+    elif nb1 < nb2:
+        min = nb1
+        max = nb2
     else:
-        min = b
-        max = a
+        min = nb2
+        max = nb1
     return min, max
 
 # fonction créer liste de nombre 
-def min_max(min, max):
+def min_max(nb_min, nb_max):
     liste = []
-    i = min
-    while i < max:
+    i = nb_min
+    while i < nb_max:
         liste.append(i)
         i += 1
     return liste
@@ -34,15 +45,7 @@ def print_liste(liste):
 
 ## Error handling
 
-# check nb arguments
-if len(sys.argv) != 3:
-    print("error !")
-    sys.exit()
-
-# check format argument
-if not sys.argv[1].isdigit() or not sys.argv[2].isdigit():
-    print("error format!")
-    sys.exit()
+error_handling(sys.argv)
 
 
 ## Parsing 
@@ -52,9 +55,9 @@ nb1, nb2 = int(sys.argv[1]), int(sys.argv[2])
 
 ## Resolution
 
-min, max = which_min_max(nb1, nb2)
+nb_min, nb_max = which_min_max(nb1, nb2)
 
-liste_nb = min_max(min, max)
+liste_nb = min_max(nb_min, nb_max)
 
 
 ## Display
