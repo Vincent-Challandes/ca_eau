@@ -1,9 +1,10 @@
 ## Module and Functions and Variables globals
 
 import sys
+import re
 
-liste_maj = "ABCDEFGHIJKLMNOPQRSTUVWXYZ! "
-liste_min = "abcdefghijklmnopqrstuvwxyz! "
+liste_maj = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+liste_min = "abcdefghijklmnopqrstuvwxyz"
 
 # ma propre fonction lower()
 # Convertie une string en minuscule (pourrait avoir en entrée des min et des MAJ, chiffre symbole etc)
@@ -11,7 +12,7 @@ def minuscule(lettre):
     result = ""
     for c in range(len(lettre)):
         if lettre[c] in liste_maj:
-            for i in range(28):
+            for i in range(26):
                 if lettre[c] == liste_maj[i]:
                     result += liste_min[i]
         else:
@@ -24,7 +25,7 @@ def majuscule(lettre):
     result = ""
     for c in range(len(lettre)):
         if lettre[c] in liste_min:
-            for i in range(28):
+            for i in range(26):
                 if lettre[c] == liste_min[i]:
                     result += liste_maj[i]
         else:
@@ -36,9 +37,9 @@ def check_count_argv(arguments):
         print("error !")
         sys.exit()
 
-def is_alphabet(string):
-    for c in range(len(string)):
-        if not string[c] in liste_min and not string[c] in liste_maj:
+
+def is_digit(string):
+        if string.isdigit():
             print("error format!")
             sys.exit()
 
@@ -47,7 +48,9 @@ def majuscule_sur_deux(string):
     x = 0
     result = ""  
     for a in range(len(string)):
-        if string[a] == " " or string[a] == "!":
+        # on utilise une regex afin de dire si ce n'est pas une lettre minuscule ou majuscule on garde le caractère telle quel
+        # et on continue pour pas incrémenter le conteur x
+        if re.search("[^a-zA-Z]", string[a]):
             result += string[a]
             continue
         if x % 2 == 0:
@@ -63,7 +66,7 @@ def majuscule_sur_deux(string):
 
 check_count_argv(sys.argv)
 
-is_alphabet(sys.argv[1])
+is_digit(sys.argv[1])
 
 
 ## Parsing
