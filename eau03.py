@@ -2,6 +2,15 @@
 
 import sys
 
+def error_handling(arguments):
+    if len(arguments) != 2:
+        print("-1")
+        sys.exit()
+
+    if not arguments[1].isdigit():
+        print("-1")
+        sys.exit()
+
 # on va créer une liste de la suite de fibo de la longueur dont on a besoin pour éviter une liste infini
 def index_fibo(index):
     suite_fibo = [0, 1]
@@ -13,13 +22,7 @@ def index_fibo(index):
 
 ## Error handling
 
-if len(sys.argv) != 2:
-    print("-1")
-    sys.exit()
-
-if not sys.argv[1].isdigit():
-    print("-1")
-    sys.exit()
+error_handling(sys.argv)
 
 
 ## Parsing
