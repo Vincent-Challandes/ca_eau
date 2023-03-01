@@ -2,6 +2,11 @@
 
 import sys
 
+def check_count_argv(arguments):
+    if not len(arguments) == 2:
+        print("error !")
+        sys.exit()
+
 def is_alphabet(string):
     for c in range(len(string)):
         if string[c].isdigit():
@@ -20,9 +25,7 @@ def majuscule(string):
 
 ## Error handling
 
-if not len(sys.argv) == 2:
-    print("error !")
-    sys.exit()
+check_count_argv(sys.argv)
 
 is_alphabet(sys.argv[1])
 
