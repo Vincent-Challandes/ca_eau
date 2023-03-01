@@ -31,6 +31,11 @@ def majuscule(lettre):
             result += lettre[c]
     return result
 
+def check_count_argv(arguments):
+    if not len(arguments) == 2:
+        print("error !")
+        sys.exit()
+
 def is_alphabet(string):
     for c in range(len(string)):
         if not string[c] in liste_min and not string[c] in liste_maj:
@@ -56,9 +61,7 @@ def majuscule_sur_deux(string):
 
 ## Error handling
 
-if not len(sys.argv) == 2:
-    print("error !")
-    sys.exit()
+check_count_argv(sys.argv)
 
 is_alphabet(sys.argv[1])
 
