@@ -2,6 +2,10 @@
 
 import sys
 
+def check_nb_args(args):
+    if len(args) < 3:
+        print("error !")
+        sys.exit()
 
 def selection_sort(array):
     n = len(array)
@@ -29,9 +33,7 @@ def affichage(array):
 
 ## Error handling
 
-if len(sys.argv) < 3:
-    print("error !")
-    sys.exit()
+check_nb_args(sys.argv)
 
 
 ## Parsing
