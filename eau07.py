@@ -43,5 +43,3 @@ resultat = majuscule(string)
 ## Display
 
 print(resultat)
-
-print("hello")
