@@ -2,6 +2,15 @@
 
 import sys
 
+def error_handling(arguments):
+    if len(arguments) != 3:
+        print("error !")
+        sys.exit()
+
+    if arguments[1].isdigit() or arguments[2].isdigit():
+        print("error !")
+        sys.exit()
+
 def string_string(st1, st2):
     # range(on enlève la longueur de la substring pour pas avoir à itérer toute la main_string
     # et ajoute 1 sinon on contrôle pas la dernière lettre possible dans la main_string)
@@ -13,13 +22,7 @@ def string_string(st1, st2):
 
 ## Error handling
 
-if len(sys.argv) != 3:
-    print("error !")
-    sys.exit()
-
-if sys.argv[1].isdigit() or sys.argv[2].isdigit():
-    print("error !")
-    sys.exit()
+error_handling(sys.argv)
 
 
 ## Parsing
