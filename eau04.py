@@ -1,31 +1,34 @@
 ## Modules and Functions
 import sys
 
-def nb_premier(a):
-    if a > 2:
+def error_handling(arguments):
+    if len(arguments) != 2:
+        print("-1")
+        sys.exit()
+
+    if not arguments[1].isdigit():
+        print("-1")
+        sys.exit()
+
+def nb_premier(nb):
+    if nb > 2:
         while True:
             # on créer une boucle ou l'on cherche a savoir si on peut diviser notre nombre par autre choses que lui-même et et 1 
-            for i in range(2, a):
-                reste = a % i
+            for i in range(2, nb):
+                reste = nb % i
                 if reste == 0:
                     break
             if reste != 0:
-                return a
+                return nb
             else:
-                a += 1
+                nb += 1
     else:
         return 2
                   
 
 ## Error handling
 
-if len(sys.argv) != 2:
-    print("-1")
-    sys.exit()
-
-if not sys.argv[1].isdigit():
-    print("-1")
-    sys.exit()
+error_handling(sys.argv)
 
 
 ## Parsing
