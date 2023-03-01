@@ -2,6 +2,11 @@
 
 import sys
 
+def check_nb_args(args):
+    if len(args) < 3:
+        print("error !")
+        sys.exit()
+
 # fonction check si nombre positif/négatif
 def chiffre_only(liste):
     for c in liste:
@@ -53,9 +58,7 @@ def mini_abs(liste):
 
 ## Error handling
 
-if len(sys.argv) < 3:
-    print("error !")
-    sys.exit()
+check_nb_args(sys.argv)
 
 chiffre_only(sys.argv[1:])
 
