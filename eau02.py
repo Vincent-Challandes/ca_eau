@@ -1,24 +1,29 @@
 # Function 
 
 import sys
-def afficheur_arguments(a):
+
+def check_nb_argv(liste):
+    if len(liste) == 1:
+     print("erreur : veuillez entrer un ou des arguments")
+     sys.exit()
+
+def afficheur_arguments(liste):
     result =[]
-    for i in a:
+    for i in liste:
         if i == arguments[0]:
             continue
         else:
             result.append(i)
     return result[::-1]
 
-def print_list(a):
-    for element in a:
+def print_list(liste):
+    for element in liste:
         print(element)
 
 ## Error handling
 
-if len(sys.argv) == 1:
-     print("erreur : veuillez entrer un ou des arguments")
-     sys.exit()
+check_nb_argv(sys.argv)
+
 
 ## Parsing
 
