@@ -8,17 +8,14 @@ def check_nb_argv(liste):
      sys.exit()
 
 def afficheur_arguments(liste):
-    result =[]
-    for i in liste:
+    # la on parcour notre tableau de la fin au début
+    for i in liste[::-1]:
         if i == arguments[0]:
             continue
         else:
-            result.append(i)
-    return result[::-1]
-
-def print_list(liste):
-    for element in liste:
-        print(element)
+            # on print direct afin de pas avoir a stocker un nouveau tableau inversé
+            print(i)
+            
 
 ## Error handling
 
@@ -32,9 +29,4 @@ arguments = sys.argv
 
 # Resolution
 
-resultat = afficheur_arguments(arguments)
-
-
-# Display
-
-print_list(resultat)
+afficheur_arguments(arguments)
