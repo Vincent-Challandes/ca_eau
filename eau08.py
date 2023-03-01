@@ -1,25 +1,23 @@
 ## Module and Functions and Variables globals
 
 import sys
+import re
 
 def error_handling(arguments):
     if not len(arguments) == 2:
         print("error !")
         sys.exit()
 
-# ma propre fonction isdigit()
+
 def chiffres_only(string):
-    liste_chiffre = "0123456789"
     result = ""
-    for c in range(len(string)):
-        for i in liste_chiffre:
-            if i != string[c]:
-                result = "false"
-            else:
-                result = "true"
-                break
-        if result == "false":
+    for i in range(len(string)):
+        # utilisation de regex pour ne pas avoir a écrir un array avec tous les chiffre
+        if re.search("[^0-9]", string[i]):
+            result = "false"
             break
+        else:
+            result = "true"
     return result
         
 
