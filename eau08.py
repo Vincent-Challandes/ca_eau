@@ -2,6 +2,11 @@
 
 import sys
 
+def error_handling(arguments):
+    if not len(arguments) == 2:
+        print("error !")
+        sys.exit()
+
 # ma propre fonction isdigit()
 def chiffres_only(string):
     liste_chiffre = "0123456789"
@@ -20,9 +25,7 @@ def chiffres_only(string):
 
 ## Error handling
 
-if not len(sys.argv) == 2:
-    print("error !")
-    sys.exit()
+error_handling(sys.argv)
 
 
 ## Parsing
